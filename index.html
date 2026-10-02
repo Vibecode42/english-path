@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>English Path — английский с нуля до C2</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#/" class="logo"><span class="logo-mark">EP</span><span class="logo-text">English Path</span></a>
+    <nav class="nav">
+      <a href="#/" data-nav="home">Кабинет</a>
+      <a href="#/dictionary" data-nav="dictionary">Словарь <span class="pill" id="dueBadge" hidden></span></a>
+      <a href="#/immersion" data-nav="immersion">Погружение</a>
+      <a href="#/works" data-nav="works">Работы <span class="pill" id="worksBadge" hidden></span></a>
+      <a href="#/placement" data-nav="placement">Тест</a>
+    </nav>
+    <div class="stats-mini">
+      <span title="Серия дней подряд">🔥 <b id="streakVal">0</b></span>
+      <span title="Очки опыта">⭐ <b id="xpVal">0</b></span>
+    </div>
+  </header>
+
+  <main id="app" class="container"></main>
+
+  <footer class="footer container">
+    <span>Прототип. Прогресс хранится в этом браузере (в рабочей версии — в Supabase).</span>
+    <span class="footer-actions">
+      <label class="switch" title="Открыть все уроки без последовательного прохождения">
+        <input type="checkbox" id="freeMode"> Свободный режим
+      </label>
+      <a href="#/teacher" class="link-btn">Кабинет преподавателя (демо)</a>
+      <button id="resetProgress" class="link-btn">Сбросить прогресс</button>
+    </span>
+  </footer>
+
+  <!-- ИИ-тьютор -->
+  <button class="ai-fab" id="aiOpen" title="ИИ-тьютор">🤖 <span>ИИ-тьютор</span></button>
+  <aside class="ai-drawer" id="aiDrawer" aria-hidden="true">
+    <div class="ai-head">
+      <div><b>ИИ-тьютор</b> <span class="pill">демо</span><div class="muted small" id="aiContext"></div></div>
+      <button class="icon-btn" id="aiClose" aria-label="Закрыть">✕</button>
+    </div>
+    <div class="ai-log" id="aiLog"></div>
+    <div class="ai-quick" id="aiQuick"></div>
+    <form class="ai-form" id="aiForm">
+      <input id="aiInput" placeholder="Спросите о грамматике или слове…" autocomplete="off">
+      <button class="btn">→</button>
+    </form>
+  </aside>
+
+  <div class="toasts" id="toasts"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/ipa.js"></script>
+  <script src="js/immersion.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
